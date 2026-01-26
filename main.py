@@ -1,7 +1,7 @@
 import App.view as view
 
 
-# Main function
+# Main function0
 def main():
     view.main()
 

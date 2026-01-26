@@ -96,8 +96,7 @@ def load_books_tags(app):
     :param app: Aplicación de la lógica
     :type app: logic
     """
-    booksTags = logic.load_books_tags(app,
-                                      "GoodReads/book_tags-small.csv")
+    booksTags = logic.load_books_tags(app, "GoodReads/book_tags-small.csv")
     return booksTags
 
 
