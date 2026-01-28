@@ -30,7 +30,7 @@ import os
 
 
 # Importar el modulo de la estructura de datos set
-from DataStructures import set as set
+from DataStructures import Set as st
 
 # Directorio de datos de los archivos
 data_dir = os.path.dirname(os.path.realpath('__file__')) + '/Data/'
@@ -67,9 +67,9 @@ def new_logic():
     }
 
     # Inicialización de las estructuras de datos
-    catalog["books"] = set.new_set()
-    catalog["tags"] = set.new_set()
-    catalog["book_tags"] = set.new_set()
+    catalog["books"] = st.new_set()
+    catalog["tags"] = st.new_set()
+    catalog["book_tags"] = st.new_set()
 
     return catalog
 
@@ -93,7 +93,7 @@ def load_books(catalog, filename):
     """
     books = catalog["books"]
     booksfile = os.path.join(data_dir, filename)
-    catalog["books"] = set.load_set(books, booksfile)
+    catalog["books"] = st.load_set(books, booksfile)
     if empty_books(catalog):
         return 0
     else:
@@ -114,12 +114,12 @@ def load_tags(catalog, filename):
     """
     tags = catalog["tags"]
     tagsfile = os.path.join(data_dir, filename)
-    catalog["tags"] = set.load_set(tags, tagsfile)
+    catalog["tags"] = st.load_set(tags, tagsfile)
 
-    if set.is_empty(tags):
+    if st.is_empty(tags):
         return 0
     else:
-        return set.size(tags)
+        return st.size(tags)
 
 
 def load_books_tags(catalog, filename):
@@ -141,14 +141,15 @@ def load_books_tags(catalog, filename):
     # La función debe cargar los tags de los libros del archivo y los agregar al conjunto book_tags del catalogo.
     # La función debe retornar el tamaño del conjunto de tags de los libros.
     
-    book_tags = catalog.get("Book_tags")
+    book_tags = catalog.get("book_tags")
     book_tags_file = os.path.join(data_dir, filename)
-    catalog["Book_tags"] = set.load_set(book_tags, book_tags_file)
+    
+    catalog["book_tags"] = st.load_set(book_tags, book_tags_file)
     
     if book_tags is None:
-        return None
+        return 0
     else:
-        return set.size(catalog.get("Book_tags"))
+        return st.size(catalog.get("book_tags"))
 
 # Funciones de consulta
 
@@ -163,7 +164,7 @@ def book_size(catalog):
     :returns: Tamaño del conjunto de libros
     :rtype: int
     """
-    return set.size(catalog["books"])
+    return st.size(catalog["books"])
 
 
 def tag_size(catalog):
@@ -176,7 +177,7 @@ def tag_size(catalog):
     :returns: Tamaño del conjunto de tags
     :rtype: int
     """
-    return set.size(catalog["tags"])
+    return st.size(catalog["tags"])
 
 
 def book_tag_size(catalog):
@@ -189,7 +190,7 @@ def book_tag_size(catalog):
     :returns: Tamaño del conjunto de tags de los libros
     :rtype: int
     """
-    return set.size(catalog["book_tags"])
+    return st.size(catalog["book_tags"])
 
 
 def empty_books(catalog):
@@ -203,7 +204,7 @@ def empty_books(catalog):
     :rtype: bool
     """
     books = catalog["books"]
-    return set.is_empty(books)
+    return st.is_empty(books)
 
 
 def empty_tags(catalog):
@@ -217,7 +218,7 @@ def empty_tags(catalog):
     :rtype: bool
     """
     tags = catalog["tags"]
-    return set.is_empty(tags)
+    return st.is_empty(tags)
 
 
 def empty_book_tags(catalog):
@@ -231,4 +232,4 @@ def empty_book_tags(catalog):
     :rtype: bool
     """
     book_tags = catalog["book_tags"]
-    return set.is_empty(book_tags)
+    return st.is_empty(book_tags)
