@@ -38,8 +38,8 @@ Este repositorio forma parte del marco docente de estructura de datos y algoritm
 
 Los estudiantes editan esta sección para agregar sus nombres, correos electrónicos de Uniandes y especificar qué funcionalidad de proyecto implementarán.
 
-1. David Bastos, d.bastos@uniandes.edu.co, Funcionalidad propiedad del estudiante No. 1.
-1. Marco Ruiz, m.ruizi@uniandes.edu.co, Funcionalidad propiedad del estudiante No. 2.
+1. David Bastos, d.bastos@uniandes.edu.co, 202520216
+1. Marco Ruiz, m.ruizi@uniandes.edu.co, 202521030
 1. Andrés Felipe Sánchez Salcedo, af.sanchezs123@uniandes.edu.co, 202422587
 
 [Volver al inicio](#laboratorio-1)
